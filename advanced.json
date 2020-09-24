@@ -1,0 +1,25 @@
+var books = `[{
+    "title": "HTML for Dummies",
+    "author": "Dummy Dumb Dumb",
+    "read": "true"
+},{
+    "title": "CSS for Dummies",
+    "author": "Dummy Dumb Dumb",
+    "read": "true"
+},{
+    "title": "Javascript for Dummies",
+    "author": "Dummy Dumb Dumb",
+    "read": "true"
+},{
+    "title": "Angular for Dummies",
+    "author": "Dummy Dumb Dumb",
+    "read": "false"
+},{
+    "title": "jQuery for Dummies",
+    "author": "Dummy Dumb Dumb",
+    "read": "false" 
+},{
+    "title": "Bootstrap for Dummies",
+    "author": "Dummy Dumb Dumb",
+    "read": "false"           
+}]`;

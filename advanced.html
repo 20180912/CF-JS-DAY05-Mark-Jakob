@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced</title>
+    <script src="advanced.json"></script>
+</head>
+<body>
+
+    <div id="content"></div>
+    <script>
+        var books_obj = JSON.parse(books)
+        var element = document.getElementById("content");
+        var u_list = document.createElement('ul');
+        element.appendChild(u_list);
+        //u_list.setAttribute('id','list');
+
+        for (let i = 0; i < books_obj.length; i++) {
+            var tmp = document.createElement('li')   
+            var text = document.createTextNode(`Title: ${books_obj[i].title}, author: ${books_obj[i].author}`);
+            tmp.appendChild(text);
+            u_list.appendChild(tmp);
+            /* alternative solution:
+            document.getElementById('list').appendChild(tmp);*/
+        }
+
+    </script>
+</body>
+</html>
