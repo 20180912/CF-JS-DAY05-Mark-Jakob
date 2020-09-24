@@ -9,6 +9,7 @@
 <body>
 
     <div id="content"></div>
+
     <script>
         var books_obj = JSON.parse(books)
         var element = document.getElementById("content");
@@ -17,9 +18,29 @@
         //u_list.setAttribute('id','list');
 
         for (let i = 0; i < books_obj.length; i++) {
-            var tmp = document.createElement('li')   
-            var text = document.createTextNode(`Title: ${books_obj[i].title}, author: ${books_obj[i].author}`);
+            var tmp = document.createElement('li');
+            var text = document.createTextNode(`Title: ${books_obj[i].title}; Author: ${books_obj[i].author}`);
+
+            //changes text color depending on read/unread (see advanced.json)
+            if (JSON.parse(books_obj[i].read)) {
+                tmp.style.color = "green";
+            } else {
+                tmp.style.color = "red";
+            }
+
             tmp.appendChild(text);
+
+            //appends book cover to each li element and resizes it
+            var image = document.createElement('img');
+            var imageSrc = books_obj[i].imgSource;
+
+            image.src = imageSrc;
+            image.style.width = "100px";
+
+            var br = document.createElement('br');
+            tmp.appendChild(br);
+            tmp.appendChild(image);
+
             u_list.appendChild(tmp);
             /* alternative solution:
             document.getElementById('list').appendChild(tmp);*/
